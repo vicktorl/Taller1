@@ -1,32 +1,24 @@
 function store() {
-    var inputElement = document.getElementById("txtMensaje");
-
-persistInput(inputElement);
     var inputAutor = document.getElementById("txtAutor"),
-        inputMensaje = document.getElementById("txtAutor");
+        inputMensaje = document.getElementById("txtMensaje");
 
-    localStorage.setItem("txtAutor", inputAutor.value);
-    localStorage.setItem("inputMensaje", inputMensaje.value);
+    const datos = [];
+    
+    datos.push(inputAutor.value);
+    datos.push(inputMensaje.value);
+
+    if (localStorage.getItem('usuario') != null) {
+        localStorage.setItem("usuario", JSON.stringify(datos));
+        reset();
+    }
+
+    // localStorage.setItem("inputMensaje", inputMensaje.value);
     mostrar();
 
 }
-function mostrar(){
-    if (localStorage.getItem('txtAutor')) {
-        alert(localStorage.getItem('txtAutor'));
-    }
+function mostrar() {
+    var formulario = document.getElementsByClassName('tbUsuario');
 
-}
-function persistInput(input)
-{
-  var key = "input-" + input.id;
-
-  var storedValue = localStorage.getItem(key);
-
-  if (storedValue)
-      input.value = storedValue;
-
-  input.addEventListener('input', function ()
-  {
-      localStorage.setItem(key, input.value);
-  });
+    datos = JSON.parse(localStorage.getItem("usuario"));
+    return datos;
 }

@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="javascript.js"> type = "text/javascript"</script>
-    <script src="javascriptMostrar.js"> type = "text/javascript"</script>
 </head>
 
 <body id="bodystyle">
@@ -39,7 +38,7 @@
             <fieldset id="mapa">
                 <h1 id=datusuario>ingrese sus datos</h1>
                 <center><p id="consulta">Porfavor sobre cualquier consulta duda o simplemente dar su opinion complete los datos :</p></center>
-                <form id="usuario">
+                <form id="usuario" class="formulario">
                     <label for="txtAutor">Autor*</label>
                     <input id="txtAutor" autocomplete="off" required name="Autor" class="control form-control">
                     <label for="txtMensaje">Mensaje*</label>
@@ -47,7 +46,7 @@
                     <input onclick="store()" class="boton btn btn-primary" id="btnRegistrar" type="submit"
                         value="Enviar">
                 </form>
-                <table id="usuario">
+                <table id="usuario" class="tbUsuario">
                     <tr>
                         <td>Autor </td>
                         <td>Mensaje</td>
